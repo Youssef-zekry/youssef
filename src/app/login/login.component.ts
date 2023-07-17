@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import{user} from '../models/user'
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
+import { userservice } from '../userService';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private userService: userservice) { }
 
   login(mail:String, password:String){
     const url = 'http://localhost:8080/demo/';
@@ -36,6 +37,8 @@ export class LoginComponent {
         alert('Login failed');
       } else {
         console.log(user);
+        this.userService.setUser(user);
+        this.router.navigate(['/details'], {state: {user}});
       }
     });
   }

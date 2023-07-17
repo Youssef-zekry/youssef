@@ -62,7 +62,6 @@ yarn-error.log
 *.min.*
 *.map
 *.css.map
-*.js.map
 *.tsbuildinfo
 *.bak
 *.cache
@@ -71,6 +70,13 @@ yarn-error.log
 *.rar
 *.7z
 *.log.*
+
+# Ignoring additional file types
+*.scss
+*.svg
+*.woff2
+*.woff
+*.js
 
 # Miscellaneous
 /.angular/cache

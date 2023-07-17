@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <h1>User Details</h1>
+    <div *ngIf="user">
+      <p>Status Code: {{ user.status_code }}</p>
+      <p>Message: {{ user.message }}</p>
+      <p>First Name: {{ user.first_name }}</p>
+      <p>Last Name: {{ user.last_name }}</p>
+      <p>Birthdate: {{ user.birthdate }}</p>
+      <p>Mail: {{ user.mail }}</p>
+      <p>Gender: {{ user.gender }}</p>
+      <p>Mobile: {{ user.mobile }}</p>
+      <p>Address: {{ user.address }}</p>
+      <p>Balance: {{ user.balance }}</p>
+    </div>
+    <div *ngIf="!user">
+      <p>Loading user data...</p>
+    </div>
+  </body>
+</html>
