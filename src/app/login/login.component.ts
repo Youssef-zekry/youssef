@@ -37,7 +37,7 @@ export class LoginComponent {
         alert('Login failed');
       } else {
         console.log(user);
-        this.userService.setUser(user);
+        localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/details'], {state: {user}});
       }
     });
