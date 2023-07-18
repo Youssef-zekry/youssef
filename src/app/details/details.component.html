@@ -2,14 +2,12 @@
 <html>
   <head> </head>
   <body>
-    <h1>User Details</h1>
-    <div *ngIf="user">
-      <p>Status Code: {{ user.status_code }}</p>
-      <p>Message: {{ user.message }}</p>
-      <p>First Name: {{ user.first_name }}</p>
-      <p>Last Name: {{ user.last_name }}</p>
+    <h1 class="display-2">User Details</h1>
+    <div *ngIf="user" class="badge" class="display-4">
+      <p >First Name: {{ user.firstName }}</p>
+      <p>Last Name: {{ user.lastName }}</p>
       <p>Birthdate: {{ user.birthdate }}</p>
-      <p>Mail: {{ user.mail }}</p>
+      <p>Email: {{ user.mail }}</p>
       <p>Gender: {{ user.gender }}</p>
       <p>Mobile: {{ user.mobile }}</p>
       <p>Address: {{ user.address }}</p>

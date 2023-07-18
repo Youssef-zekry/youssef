@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head> 
-	
   </head>
   <body>
-    <form class="user">
+    <form class="user"  class="container">
       <div class="form-group">
-        <input #inputmail type="mail" id="mail" name="mail" formControlName="mail" placeholder="email"/>
+        <input #inputmail type="email" id="mail" name="mail" formControlName="mail" placeholder="email" class="form-control form-control-user"/>
       </div>
       <div class="form-group">
-        <input #inputpassword type="password" id="password" name="password" formControlName="password" placeholder="password"/>
+        <input #inputpassword type="password" id="password" name="password" formControlName="password" placeholder="password" class="form-control form-control-user"/>
       </div>
 	  <div>
-		<button type="button" (click)="login(inputmail.value, inputpassword.value)">Login</button>	  </div>
+		<button type="button" (click)="login(inputmail.value, inputpassword.value)" class="btn btn-primary btn-user btn-block">Login</button>	  </div>
     </form>
   </body>
 </html>

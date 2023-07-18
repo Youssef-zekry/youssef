@@ -20,8 +20,8 @@ export class LoginComponent {
         return new user(
           response.status_code,
           response.message,
-          response.first_name,
-          response.last_name,
+          response.firstName,
+          response.lastName,
           response.birthdate,
           response.mail,
           response.gender,
