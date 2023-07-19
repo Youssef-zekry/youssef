@@ -2,17 +2,80 @@
 <html>
   <head> </head>
   <body>
-    <h1 class="display-2">User Details</h1>
-    <div *ngIf="user" class="badge" class="display-4">
-      <p >First Name: {{ user.firstName }}</p>
-      <p>Last Name: {{ user.lastName }}</p>
-      <p>Birthdate: {{ user.birthdate }}</p>
-      <p>Email: {{ user.mail }}</p>
-      <p>Gender: {{ user.gender }}</p>
-      <p>Mobile: {{ user.mobile }}</p>
-      <p>Address: {{ user.address }}</p>
-      <p>Balance: {{ user.balance }}</p>
-    </div>
+	<div class="row" *ngIf="user" >
+		<div class="col-lg-6">
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">First Name</h6>
+				</div>
+				<div class="card-body">
+					{{ user.firstName }}
+				</div>
+			</div>
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Last Name</h6>
+				</div>
+				<div class="card-body">
+					{{ user.lastName }}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Birth Date</h6>
+				</div>
+				<div class="card-body">
+					{{ user.birthdate }}
+				</div>
+			</div>
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Email</h6>
+				</div>
+				<div class="card-body">
+					{{ user.mail }}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Gender</h6>
+				</div>
+				<div class="card-body">
+					{{ user.gender }}
+				</div>
+			</div>
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Mobile Number</h6>
+				</div>
+				<div class="card-body">
+					{{ user.mobile }}
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Address</h6>
+				</div>
+				<div class="card-body">
+					{{ user.address }}
+				</div>
+			</div>
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Your Balance</h6>
+				</div>
+				<div class="card-body">
+					{{ user.balance }}
+				</div>
+			</div>
+		</div>
+	</div>
     <div *ngIf="!user">
       <p>Loading user data...</p>
     </div>
