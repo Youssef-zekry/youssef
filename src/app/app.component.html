@@ -3,7 +3,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul
-      *ngIf="!isLoginPage()"
+      *ngIf="!isLoginPage()"||*ngIf="!isResetPasswordPage()"
       class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
@@ -40,7 +40,7 @@
       <div id="content">
         <!-- Topbar -->
         <nav
-          *ngIf="!isLoginPage()"
+          *ngIf="!isLoginPage()"||*ngIf="!isResetPasswordPage()"
           class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
         >
           <!-- Topbar Navbar -->
@@ -105,7 +105,7 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer *ngIf="!isLoginPage()"
+      <footer *ngIf="!isLoginPage()"||*ngIf="!isResetPasswordPage()"
       class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">

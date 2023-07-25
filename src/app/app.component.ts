@@ -14,4 +14,7 @@ export class AppComponent {
   isLoginPage(){
     return this.router.url === '/login';
   }
+  isResetPasswordPage(){
+    return this.router.url === '/resetPassword';
+  }
 }
