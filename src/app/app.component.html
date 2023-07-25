@@ -3,7 +3,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul
-      *ngIf="!isLoginPage()"||*ngIf="!isResetPasswordPage()"
+      *ngIf="!isLoginPage() && !isResetPasswordPage()"
       class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
       id="accordionSidebar"
     >
@@ -40,7 +40,7 @@
       <div id="content">
         <!-- Topbar -->
         <nav
-          *ngIf="!isLoginPage()"||*ngIf="!isResetPasswordPage()"
+          *ngIf="!isLoginPage() && !isResetPasswordPage()"
           class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
         >
           <!-- Topbar Navbar -->
@@ -95,8 +95,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <div
-          >
+          <div>
             <router-outlet></router-outlet>
           </div>
         </div>
@@ -105,8 +104,10 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer *ngIf="!isLoginPage()"||*ngIf="!isResetPasswordPage()"
-      class="sticky-footer bg-white">
+      <footer
+        *ngIf="!isLoginPage() && !isResetPasswordPage()"
+        class="sticky-footer bg-white"
+      >
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Youssef Zekry 2023</span>
@@ -154,20 +155,22 @@
     </div>
   </div>
 
+
+</body>
   <!-- Bootstrap core JavaScript-->
-  <script src="Y:\youssef\src\assets\vendor\jquery\jquery.min.js"></script>
-  <script src="Y:\youssef\src\assets\vendor\bootstrap\js\bootstrap.bundle.min.js"></script>
+  <script src="..\assets\vendor\jquery\jquery.min.js"></script>
+  <script src="..\assets\vendor\bootstrap\js\bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="Y:\youssef\src\assets\vendor\jquery-easing\jquery.easing.min.js"></script>
+  <script src="..\assets\vendor\jquery-easing\jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="Y:\youssef\src\assets\js\sb-admin-2.min.js"></script>
+  <script src="..\assets\js\sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="Y:\youssef\src\assets\vendor\chart.js\Chart.min.js"></script>
+  <script src="..\assets\vendor\chart.js\Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script src="Y:\youssef\src\assets\js\demo\chart-area-demo.js"></script>
-  <script src="Y:\youssef\src\assets\js\demo\chart-pie-demo.js"></script>
-</body>
+  <script src="..\assets\js\demo\chart-area-demo.js"></script>
+
+  <script src="..\assets\js\demo\chart-pie-demo.js"></script>
