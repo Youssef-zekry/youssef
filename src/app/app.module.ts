@@ -8,13 +8,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DetailsComponent } from './details/details.component';
 import { userservice } from './userService';
 import { HomeComponent } from './home/home.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DetailsComponent,
-    HomeComponent
+    HomeComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
