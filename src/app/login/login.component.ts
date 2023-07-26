@@ -38,7 +38,10 @@ export class LoginComponent {
         console.log(user);
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/details'], {state: {user}});
+        this.userService.isLoggedIn = true;
       }else{
+        console.log(body);
+        console.log(user);
         alert('Login failed');
       } 
     });
