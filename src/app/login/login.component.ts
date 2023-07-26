@@ -33,13 +33,14 @@ export class LoginComponent {
         );
       })
     ).subscribe(user => {
-      if (user.status_code === -1) {
-        alert('Login failed');
-      } else {
+      if (user.status_code === 0)  {
+        console.log(body);
         console.log(user);
         localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/details'], {state: {user}});
-      }
+      }else{
+        alert('Login failed');
+      } 
     });
   }
 }

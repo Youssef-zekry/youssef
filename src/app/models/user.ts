@@ -1,5 +1,5 @@
 export class user {
-	public status_code: number = 0;
+	public status_code: number = -2;
 	public message: string = '';
 	public firstName: string = '';
 	public lastName: string = '';
