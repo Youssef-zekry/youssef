@@ -1,4 +1,4 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { user } from './models/user';
 import { userservice } from './userService';
@@ -6,33 +6,25 @@ import { userservice } from './userService';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   user?: user;
-
-  constructor( private router: Router, private userservice: userservice){}
+  constructor(private router: Router, private userService: userservice) {}
   title = 'youssef';
 
   ngOnInit() {
-    this.user = this.userservice.getUser();
+    this.user = this.userService.getUser();
   }
 
-get isLoggedIn(){
-  return this.userservice.isLoggedIn;
-}
+  get isLoggedIn() {
+    return this.userService.isLoggedIn;
+  }
 
-
-
-
-
-
-
-
-  isLoginPage(){
+  isLoginPage() {
     return this.router.url === '/login';
   }
-  isResetPasswordPage(){
+  isResetPasswordPage() {
     return this.router.url === '/resetPassword';
   }
 }
