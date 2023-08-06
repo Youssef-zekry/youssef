@@ -9,6 +9,8 @@ import { DetailsComponent } from './details/details.component';
 import { userservice } from './userService';
 import { HomeComponent } from './home/home.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     LoginComponent,
     DetailsComponent,
     HomeComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
