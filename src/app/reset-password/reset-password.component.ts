@@ -21,7 +21,7 @@ export class ResetPasswordComponent {
         );
       })
       ).subscribe(user => {
-        if (user.status_code === -1) {
+        if (user.status_code === -1 || -2 || -3) {
           console.log(body);
           alert('Failed to reset password');
         } else {
