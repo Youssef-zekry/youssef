@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProductsComponent } from './products/products.component';
 import { CartComponent } from './cart/cart.component';
+import { productService } from './productService';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CartComponent } from './cart/cart.component';
   ],
   providers: [
     userservice,
+    productService,
     HttpClient],
   bootstrap: [AppComponent]
 })
