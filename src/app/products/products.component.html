@@ -1,1 +1,34 @@
-<p>products works!</p>
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body *ngIf="ngOnInit">
+    <h2>Products</h2>
+    <div class="row" *ngIf="products">
+      <div class="col-lg-6" *ngFor="let product of products">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+              {{ product.product_name }}
+            </h6>
+          </div>
+          <div class="card-body">Price: {{ product.product_price }}</div>
+          <div class="card-body">Stock: {{ product.stock }}</div>
+          <div class="card-body">Description: {{ product.product_desc }}</div>
+            <form class="card-body">
+				<div>
+					Add
+					<input type="number" id="quantity" name="quantity" min="1" max="{{ product.stock }}"/>
+					<a style="margin: 2%" href="#" class="btn btn-primary">
+						<span class="icon text-white-50"> </span>
+						<span class="text">To cart</span>
+					</a>
+			</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <div *ngIf="!products">
+      <p>Loading user data...</p>
+    </div>
+  </body>
+</html>
