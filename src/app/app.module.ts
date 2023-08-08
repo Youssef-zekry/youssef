@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProductsComponent } from './products/products.component';
 import { productService } from './productService';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ZoomDialogComponent } from './zoom-dialog/zoom-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { productService } from './productService';
     DetailsComponent,
     HomeComponent,
     ResetPasswordComponent,
-    ProductsComponent
+    ProductsComponent,
+    ZoomDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     userservice,
