@@ -2,33 +2,77 @@
 <html>
   <head> </head>
   <body *ngIf="ngOnInit">
-    <h2>Products</h2>
-    <div class="row" *ngIf="products">
-      <div class="col-lg-6" *ngFor="let product of products">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">
-              {{ product.product_name }}
-            </h6>
-          </div>
-          <div class="card-body">Price: {{ product.product_price }}</div>
-          <div class="card-body">Stock: {{ product.stock }}</div>
-          <div class="card-body">Description: {{ product.product_desc }}</div>
-            <form class="card-body">
-				<div>
-					Add
-					<input type="number" id="quantity" name="quantity" min="1" max="{{ product.stock }}"/>
-					<a style="margin: 2%" href="#" class="btn btn-primary">
-						<span class="icon text-white-50"> </span>
-						<span class="text">To cart</span>
-					</a>
-			</div>
-            </form>
+    <div *ngIf="this.screenNumber === 1">
+      <h2>Products</h2>
+      <div class="row" *ngIf="products">
+        <div class="col-lg-6" *ngFor="let product of products">
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">
+                {{ product.product_name }}
+              </h6>
+            </div>
+            <div class="card-body">Price: {{ product.product_price }}</div>
+            <div class="card-body">Stock: {{ product.stock }}</div>
+            <div class="card-body">Description: {{ product.product_desc }}</div>
+            <div class="card-body">
+              Add
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="{{ product.stock }}"
+                #inputNumber
+              />
+              <button
+                style="margin: 2%"
+                href="#"
+                class="btn btn-primary"
+                (click)="this.addToCart(product, +inputNumber.value)"
+              >
+                <span class="icon text-white-50"> </span>
+                <span class="text">To cart</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    <div *ngIf="!products">
-      <p>Loading user data...</p>
+      <button (click)="screenNumber = 2" class="btn btn-success">
+        <span class="icon text-white-50"> </span>
+        <span class="text">Submit</span>
+      </button>
+      <div *ngIf="!products">
+        <p>Loading products data...</p>
+      </div>
+    </div>
+
+    <div *ngIf="this.screenNumber === 2">
+      <h1>cart</h1>
+      <div class="col-lg-6" *ngFor="let item of cart">
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+              {{ item.product }}
+              {{ item.type.product_name }}
+            </h6>
+          </div>
+          <div class="card-body">Price: {{ item.type.product_price }}</div>
+          <div class="card-body">Description: {{ item.type.product_desc }}</div>
+          <div class="card-body">item count: {{ item.count }}</div>
+        </div>
+      </div>
+      <button (click)="screenNumber = 1" class="btn btn-secondary">
+        <span class="icon text-white-50"> </span>
+        <span class="text">Back to Products</span>
+      </button>
+      <button style="margin: 2%;" (click)="submitOrder()" class="btn btn-success">
+        <span class="icon text-white-50"> </span>
+        <span class="text">Order</span>
+      </button>
+      <div *ngIf="!products">
+        <p>Loading cart data...</p>
+      </div>
     </div>
   </body>
 </html>
