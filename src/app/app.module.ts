@@ -10,7 +10,6 @@ import { userservice } from './userService';
 import { HomeComponent } from './home/home.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProductsComponent } from './products/products.component';
-import { CartComponent } from './cart/cart.component';
 import { productService } from './productService';
 
 @NgModule({
@@ -20,8 +19,7 @@ import { productService } from './productService';
     DetailsComponent,
     HomeComponent,
     ResetPasswordComponent,
-    ProductsComponent,
-    CartComponent
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
