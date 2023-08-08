@@ -23,17 +23,26 @@
                 name="quantity"
                 min="1"
                 max="{{ product.stock }}"
+                value="1"
                 #inputNumber
               />
+              <a class="button" href="#popup2">
               <button
                 style="margin: 2%"
-                href="#"
                 class="btn btn-primary"
-                (click)="this.addToCart(product, +inputNumber.value)"
-              >
+                (click)="this.addToCart(product, +inputNumber.value)">
                 <span class="icon text-white-50"> </span>
                 <span class="text">To cart</span>
               </button>
+              </a>
+            </div>
+          </div>
+        </div>  
+        <div id="popup2" class="overlay2">
+          <div class="popup2">
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              Added to cart.
             </div>
           </div>
         </div>
@@ -66,10 +75,27 @@
         <span class="icon text-white-50"> </span>
         <span class="text">Back to Products</span>
       </button>
+      <a class="button" href="#popup1">
       <button style="margin: 2%;" (click)="submitOrder()" class="btn btn-success">
         <span class="icon text-white-50"> </span>
         <span class="text">Order</span>
       </button>
+    </a>
+    
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<!-- <a class="close" href="#">&times;</a> -->
+		<div style="color: crimson;" class="content" *ngIf="message == 'Order failed'">
+			Order failed.
+		</div>
+    <div style="color:limegreen;" class="content" *ngIf="message == 'Order placed successfully'">
+			Order placed successfully.
+		</div>
+    <div style="color: crimson;" class="content" *ngIf="message == 'Something went wrong'">
+			Something went wrong.
+		</div>
+	</div>
+</div>
       <div *ngIf="!products">
         <p>Loading cart data...</p>
       </div>
