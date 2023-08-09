@@ -72,15 +72,18 @@ export class ProductsComponent implements OnInit {
     this.http
       .post<responseViewModel>(url, requestBody)
       .subscribe((response) => {
-        if (
-          response.status_code === -1 ||
-          response.status_code === -2 ||
-          response.status_code === -3 ||
-          response.status_code === -4
-        ) {
+        if (response.status_code === -2) {
           console.log(response);
-          this.message = 'Order failed';
-          //   alert('order failed');
+          this.message = 'Insufficient privileges';
+        } else if (response.status_code === -3) {
+          console.log(response);
+		  this.message = 'Not enough items in stock';
+        } else if (response.status_code === -4) {
+          console.log(response);
+		  this.message = 'Not enough balance';
+		}else if (response.status_code === -5) {
+			console.log(response);
+			this.message = 'No items to order';
         } else if (response.status_code === 0) {
           console.log(response);
           this.message = 'Order placed successfully';
@@ -90,7 +93,7 @@ export class ProductsComponent implements OnInit {
           //   alert('something went wrong');
           this.message = 'Something went wrong';
         }
-		this.cart = [];
+        this.cart = [];
       });
   }
 }

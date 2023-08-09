@@ -55,7 +55,7 @@
         <p>Loading products data...</p>
       </div>
     </div>
-
+<!-- --------------------------------cart page--------------------------------------------- -->
     <div *ngIf="this.screenNumber === 2">
       <h1>cart</h1>
       <div class="col-lg-6" *ngFor="let item of cart">
@@ -85,8 +85,17 @@
 <div id="popup1" class="overlay">
 	<div class="popup">
 		<!-- <a class="close" href="#">&times;</a> -->
-		<div style="color: crimson;" class="content" *ngIf="message == 'Order failed'">
-			Order failed.
+		<div style="color: crimson;" class="content" *ngIf="message == 'Insufficient privileges'">
+			Insufficient privileges.
+		</div>
+    <div style="color: crimson;" class="content" *ngIf="message == 'Not enough items in stock'">
+			Not enough items in stock.
+		</div>
+    <div style="color: crimson;" class="content" *ngIf="message == 'No items to order'">
+			No items to order.
+		</div>
+    <div style="color: crimson;" class="content" *ngIf="message == 'Not enough balance'">
+			Insufficient privileges.
 		</div>
     <div style="color:limegreen;" class="content" *ngIf="message == 'Order placed successfully'">
 			Order placed successfully.
